@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/")
 public class HealthController {
 
@@ -20,7 +20,7 @@ public class HealthController {
     }
 
     @RequestMapping(path="/health", method = RequestMethod.GET)
-    public ResponseEntity<Void> findAll() {
+    public ResponseEntity<Void> isHealthy() {
         return ResponseEntity.ok(null);
     }
 }
