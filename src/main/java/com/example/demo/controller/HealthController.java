@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("")
 public class HealthController {
 
     @RequestMapping(path="/ready", method = RequestMethod.GET)
