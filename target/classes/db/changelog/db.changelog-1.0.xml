@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                                       http://www.liquibase.org/xml/ns/pro
+                                       http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.3.xsd">
+
+  <changeSet id="20220304145140" author="Add Value">
+
+    <!-- ================= -->
+    <!-- CREAZIONE TABELLE -->
+    <!-- ================= -->
+
+    <!-- Tabella UTENTE -->
+    <createTable tableName="users">
+      <column name="id" type="integer">
+        <constraints primaryKey="true" primaryKeyName="USER_PK" />
+      </column>
+      <column name="code" type="VARCHAR(20)">
+        <constraints nullable="false" />
+      </column>
+      <column name="username" type="VARCHAR(50)">
+        <constraints nullable="false" />
+      </column>
+      <column name="firstname" type="VARCHAR(50)">
+        <constraints nullable="false" />
+      </column>
+      <column name="lastname" type="VARCHAR(50)">
+        <constraints nullable="false" />
+      </column>
+      <column name="email" type="VARCHAR(30)">
+        <constraints nullable="false" />
+      </column>
+      <column name="role" type="VARCHAR(20)">
+        <constraints nullable="false" />
+      </column>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="20220304152946" author="Add Value">
+
+    <renameTable newTableName="utenti"
+                  oldTableName="users"/>
+  </changeSet>
+
+  <changeSet id="20220304155026" author="Add Value">
+    <createSequence sequenceName="UTENTE_IDX01" incrementBy="1" startValue="1" />
+  </changeSet>
+
+</databaseChangeLog>
